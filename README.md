@@ -17,7 +17,10 @@ If you get a `SECRET_KEY` error when you run your django server, you'll need to 
 ```
 $ cp uptact/.sample.env uptact/.env
 ```
-### For VS Code (Replit creates the virtual environment for you using poetry)
+
+If you get messages about ALLOWED_HOSTS and/or migrations, follow the instructions given in the code.
+
+### For VS Code (Replit creates the virtual environment for you using poetry, so you don't need the steps below with Replit)
 
 You must have [Poetry](https://python-poetry.org/) installed. This will allow you to get all dependencies of this project installed on your computer. You should already have Poetry installed, but if not, run the following command:
 
