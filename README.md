@@ -10,7 +10,7 @@ Create a new Repl and import from GitHub as usual. Configure the `.replit` file 
 
 ```
 language = "python3"
-run = "python3 manage.py runserver"
+run = "python manage.py runserver 0.0.0.0:3000"
 ```
 
 You must have [Poetry](https://python-poetry.org/) installed. This will allow you to get all dependencies of this project installed on your computer. You should already have Poetry installed, but if not, run the following command:
