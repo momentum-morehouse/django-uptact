@@ -4,6 +4,15 @@ This is your first Django project. For this project, functionality has already b
 
 ## Getting this project set up
 
+### Replit
+
+Create a new Repl and import from GitHub as usual. Configure the `.replit` file as follows:
+
+```
+language = "python3"
+run = "python3 manage.py runserver"
+```
+
 You must have [Poetry](https://python-poetry.org/) installed. This will allow you to get all dependencies of this project installed on your computer. You should already have Poetry installed, but if not, run the following command:
 
 ```
