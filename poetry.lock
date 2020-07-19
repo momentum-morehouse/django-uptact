@@ -115,6 +115,14 @@ django = ">=2.2"
 python-stdnum = ">=1.6"
 
 [[package]]
+category = "main"
+description = "An extensible user-registration application for Django"
+name = "django-registration-redux"
+optional = false
+python-versions = "*"
+version = "2.8"
+
+[[package]]
 category = "dev"
 description = "Dodgy: Searches for dodgy looking lines in Python code"
 name = "dodgy"
@@ -542,7 +550,7 @@ python-versions = "*"
 version = "0.29.0"
 
 [metadata]
-content-hash = "e1ff648ae6e4bef6e6ecb1e8182f176d45dc4db4b1259d0a8ffa9e79d6de50e5"
+content-hash = "299d293242cf1a860d972613007c739e7b99efccd373ba61d47a309d8a353eff"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -585,6 +593,10 @@ django-extensions = [
 django-localflavor = [
     {file = "django-localflavor-3.0.1.tar.gz", hash = "sha256:24e9a03bc11ced92365821d3cfdd96eb4e2f3e44a6f40e86c645d3e0ec65ec53"},
     {file = "django_localflavor-3.0.1-py2.py3-none-any.whl", hash = "sha256:3c3034dc64a1f7e5efd9eb53d653af905c20482d438c0e8b825d02e3121b86fa"},
+]
+django-registration-redux = [
+    {file = "django-registration-redux-2.8.tar.gz", hash = "sha256:ed525f393c452d3f5044148131cafbf50da7bdec9f78b594450bf01ad67085d4"},
+    {file = "django_registration_redux-2.8-py2.py3-none-any.whl", hash = "sha256:ed1ead5398e48bdc37064ab1e269b49301765701984e8d956a641aad2ff3a3ca"},
 ]
 dodgy = [
     {file = "dodgy-0.2.1-py3-none-any.whl", hash = "sha256:51f54c0fd886fa3854387f354b19f429d38c04f984f38bc572558b703c0542a6"},

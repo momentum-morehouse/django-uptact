@@ -1,9 +1,11 @@
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Contact, Note
 from .forms import ContactForm, NoteForm
 
 
 # Create your views here.
+@login_required
 def list_contacts(request):
     contacts = Contact.objects.all()
     return render(request, "contacts/list_contacts.html",
@@ -37,7 +39,7 @@ def edit_contact(request, pk):
         "contact": contact
     })
 
-
+@user_passes_test(lambda u: u.is_staff)
 def delete_contact(request, pk):
     contact = get_object_or_404(Contact, pk=pk)
     if request.method == 'POST':
