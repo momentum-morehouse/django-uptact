@@ -20,7 +20,8 @@ class Contact(models.Model):
     state = USStateField(null=True, blank=True)
     zip_code = USZipCodeField(null=True, blank=True)
     birthday = models.DateField(null=True, blank=True)
-    avatar = models.ImageField(upload_to="static/images", null=True, blank=True)
+    is_verified = models.BooleanField(default=False)
+
 
     def __str__(self):
       return f"{self.name}"
