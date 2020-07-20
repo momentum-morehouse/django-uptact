@@ -1,5 +1,4 @@
 from django.contrib.auth.decorators import login_required, user_passes_test
-from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Contact, Note
 from .forms import ContactForm, NoteForm
@@ -9,15 +8,8 @@ from .forms import ContactForm, NoteForm
 @login_required
 def list_contacts(request):
     contacts = Contact.objects.all()
-    if request.method == 'GET':
-      form = ContactForm()
-    else:
-      form = ContactForm(data=request.POST)
-      if form.is_valid():
-        form.save()
-        return redirect(to='list_contacts')
     return render(request, "contacts/list_contacts.html",
-                  {"contacts": contacts, "form": form})
+                  {"contacts": contacts})
 
 
 def add_contact(request):
@@ -74,11 +66,4 @@ def add_note(request, contact_pk):
             return redirect(to='contact_detail', pk=contact_pk)
 
     return render(request, "contacts/add_note.html", {"form": form, "contact": contact})
-
-def verify_contact(request, contact_pk):
-  contact = get_object_or_404(Contact, pk=contact_pk)
-  contact.is_verified = True
-  contact.save()
-  return JsonResponse({'verified':'true'})
-
 
