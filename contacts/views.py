@@ -8,8 +8,15 @@ from .forms import ContactForm, NoteForm
 @login_required
 def list_contacts(request):
     contacts = Contact.objects.all()
+    if request.method == 'GET':
+        form = ContactForm()
+    else:
+        form = ContactForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(to='list_contacts')
     return render(request, "contacts/list_contacts.html",
-                  {"contacts": contacts})
+                  {"contacts": contacts, 'form':form})
 
 
 def add_contact(request):
